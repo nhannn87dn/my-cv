@@ -1,0 +1,15 @@
+.social {
+    margin-top: 1.125rem;
+    margin-bottom: 1rem;
+    line-height: 0;
+}
+.social__link {
+    color: #44566C;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-left: 0.8125rem;
+    text-decoration: none;
+}
+.social__link:first-child {
+    margin-left: 0;
+}

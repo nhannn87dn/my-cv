@@ -1,0 +1,116 @@
+.experience_block {
+    display: block;
+    margin:0
+}
+.experience_item {
+    display: flex;
+}
+
+.experience_item_left {
+    min-width: 25%;
+    border-right: 1px solid #ececec;
+    text-align: right;
+    padding-right: 20px;
+}
+.experience_item_left h3{
+    position: relative;
+}
+
+.experience_item_left span{
+    font-size: 14px;
+    color: #666;
+}
+
+.experience_item_left h3::after{
+    content: "";
+    height: 1px;
+    width: 20px;
+    background-color: #304CFD;
+    position: absolute;
+    z-index: 1;
+    right:-20px;
+    top: 11px;
+}
+.experience_item_left h3:before{
+    content: "•";
+    border: 1px solid #304CFD;
+    background-color: #fff;
+    color: #304CFD;
+    border-radius: 20px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    right: -30px;
+    top: 3px;
+}
+
+.experience_item_right {
+    flex: 1;
+    padding: 0 0 30px 20px;
+}
+.experience_item_right h3{
+    margin-bottom: 10px;
+    position: relative;
+}
+.experience_item_right h3::after{
+    content: "";
+    height: 1px;
+    width: 20px;
+    background-color: #304CFD;
+    position: absolute;
+    z-index: 1;
+    left:-20px;
+    top: 11px;
+}
+
+.experience_desc {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .experience_item {
+      flex-direction: column;
+      flex-wrap: wrap;
+      border-left: 1px solid #ececec;
+    }
+    .experience_item_left, .experience_item_right {
+        flex: 100%;
+    }
+
+    .experience_item_left {
+        min-width: 25%;
+        border-right: 0;
+        text-align: left;
+        padding-right: 0;
+        margin-left: 20px;
+        background-color: #F5F6F7;
+        border-radius: 5px;
+        padding:5px 10px
+    }
+    
+    .experience_item_left h3::after{
+        right: unset;
+        left: -30px;
+        top: 20px;
+    }
+    .experience_item_left h3:before{
+        right: unset;
+        left: -40px;
+        top: 12px;
+    }
+    .experience_item_right {
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    .experience_item_right h3 {
+        font-size: 1em;
+    }
+    .experience_item_right h3::after{display: none;}
+    
+  }

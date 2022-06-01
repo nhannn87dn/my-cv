@@ -1,0 +1,27 @@
+
+.contacts {
+    display: block;
+    list-style: none;
+    clear: both;
+    background-color: #F5F8F9;
+    padding: 2rem;
+    margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.contacts .contacts__item{
+    border-bottom: 1px dashed #ececec;
+    padding: 5px 0;
+    margin: 0;
+    color: #555;
+}
+
+.contacts__item_icon{
+    margin-right: 15px;
+}
+
+@media (max-width: 800px) {
+    .contacts__item {
+        text-align: left !important;
+    }
+}

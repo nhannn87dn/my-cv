@@ -1,0 +1,25 @@
+
+
+.section_aboutme p:first-child{
+    margin-top: 40px;
+}
+.section__title{
+    font-size: 1.8rem;
+    margin-bottom: 1.3125rem; 
+    position: relative;
+    display: block;
+}
+.pd_0{
+    padding-top: 0;
+}
+.section__title::before {
+    content: '';
+    background-color: #304CFD;
+    border-radius: 0.5rem;
+    height: 0.3125rem;
+    position: absolute;
+    bottom: -1.0625rem;
+    left: 0;
+    width: 3.125rem;
+    z-index: 1;
+}

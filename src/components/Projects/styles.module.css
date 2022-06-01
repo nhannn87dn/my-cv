@@ -1,0 +1,26 @@
+.section__project {
+    background-color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.project_list {
+    margin-left: 20px;
+    list-style: disc;
+}
+.project_list li {
+    padding: 5px 0;
+}
+
+.project_list a{
+    color: #fff;
+    padding: 2px 10px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #304CFD;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+.project_site a{
+    margin: 10px 10px 10px 0;
+}

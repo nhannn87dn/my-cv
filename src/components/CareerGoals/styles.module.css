@@ -1,0 +1,12 @@
+.section_career_goals {
+    display: block;
+    background-color: #F5F8F9;
+}
+.section_career_blocks {
+    padding-left: 20px;
+}
+.section_career_blocks li{
+    line-height: 22px;
+    padding: 10px 0;
+    list-style: disc;
+}

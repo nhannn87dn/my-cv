@@ -1,0 +1,14 @@
+
+.clearfix:after .container:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+.clearfix, .container{ display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix, *html .container { height: 1%; }
+.clearfix, .container { display: block; }
+/* close commented backslash hack */
