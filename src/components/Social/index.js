@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles from "./styles.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -10,8 +11,9 @@ function SocialItem({icon='', link=''}){
     )
 }
 
-export default function Social({socials=[]}) {
-    const listItems = socials.map((row) => 
+function Social() {
+    const data = useContext(AppContext);
+    const listItems = data.socials.map((row) => 
         <SocialItem key={row.id.toString()} icon={row.icon} link={row.link} />);
   return (
     <div className={styles.social}>
@@ -19,3 +21,4 @@ export default function Social({socials=[]}) {
     </div>
   )
 }
+export default React.memo(Social)

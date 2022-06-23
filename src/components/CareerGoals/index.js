@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles from "./styles.module.css";
 import styles_section from "../../assets/css/section.module.css";
 
@@ -9,8 +10,9 @@ function CareerGoalsItem({content=''}){
   )
 }
 
-export default function CareerGoals({careergoals=[]}) {
-  const listItems = careergoals.map((row) => 
+export default function CareerGoals() {
+  const data = useContext(AppContext);
+  const listItems = data.careergoals.map((row) => 
         <CareerGoalsItem key={row.id.toString()}  content={row.content} />);
 
   return (

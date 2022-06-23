@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,8 +14,9 @@ function ContactItem({icon='',text=''}) {
   );
 }
 
-export default function Contact({contacts=[]}) {
-  const listItems = contacts.map((row) => 
+export default function Contact() {
+  const data = useContext(AppContext);
+  const listItems = data.contacts.map((row) => 
         <ContactItem key={row.id.toString()} id={row.id} icon={row.icon} text={row.text}  />);
   return (
     <ul className={styles.contacts}>

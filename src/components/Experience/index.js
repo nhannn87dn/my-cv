@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles_section from "../../assets/css/section.module.css";
 import styles from "./styles.module.css";
 
@@ -11,6 +12,7 @@ function DescItem({content=''}){
 
 
 function Experiencetitem({time_working='', company_name='',position='', desc=[]}){
+  
   const listDesc= desc.map((row) => 
         <DescItem key={row.id.toString()} content={row.content}/>);
 
@@ -31,9 +33,11 @@ function Experiencetitem({time_working='', company_name='',position='', desc=[]}
   )
 }
 
-export default function Experience({experiences=[]}) {
-  const listExperience= experiences.map((row) => 
-        <Experiencetitem key={row.id.toString()}  time_working={row.time_working} company_name={row.company_name} position={row.position} desc={row.desc}/>);
+function Experience() {
+  const data = useContext(AppContext);
+  const listExperience= data.experience.map((row) => 
+        <Experiencetitem key={row.id.toString()}  time_working={row.time_working} company_name={row.company_name} position={row.position} desc={row.desc}/>
+        );
 
   return (
     <section className={styles.section__experience}>
@@ -46,3 +50,4 @@ export default function Experience({experiences=[]}) {
     </section>
   );
 }
+export default  React.memo(Experience)

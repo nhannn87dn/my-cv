@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles_section from "../../assets/css/section.module.css";
 import styles from './styles.module.css';
@@ -31,11 +33,13 @@ function SkillsList({icon="fa-brands fa-html5", name='',bg='#304CFD',percent=20}
  * @returns 
  */
 
-export default function Skill({skills=[],skill_others=[]}) {
-  const listItems = skills.map((row) => 
+function Skill() {
+  const data = useContext(AppContext);
+
+  const listItems = data.skills.map((row) => 
         <SkillsList key={row.id.toString()} icon={row.icon} name={row.name} bg={row.bg} percent={row.percent} />);
 
-  const listItemsOther = skill_others.map((row) => 
+  const listItemsOther =  data.skill_others.map((row) => 
         <SkillsOther key={row.id.toString()}  content={row.content} />);
 
 
@@ -53,3 +57,4 @@ export default function Skill({skills=[],skill_others=[]}) {
     </section>
   )
 }
+export default React.memo(Skill)

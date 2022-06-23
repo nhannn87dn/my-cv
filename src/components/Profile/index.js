@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles from "./styles.module.css";
 import Social from '../Social';
 
-export default function Profile({socialsArr=[],career='Website Developer',myname='Ngọc Nhân'}) {
+function Profile() {
+  const data = useContext(AppContext);
   return (
     <div className={styles.textCenter}>
-        <h3 className={styles.user_name}>{myname}</h3>
-        <div className={styles.badge}>{career}</div>
-        <Social socials={socialsArr}/>
+        <h3 className={styles.user_name}>{data.name}</h3>
+        <div className={styles.badge}>{data.career}</div>
+        <Social />
     </div>
   )
 }
+
+export default React.memo(Profile)

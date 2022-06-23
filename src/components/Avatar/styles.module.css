@@ -1,0 +1,10 @@
+.avatar {
+    max-height: 12.5rem;
+    max-width: 12.5rem;
+    height: 12.5rem;
+    width:  12.5rem;
+    margin:-8rem auto  1.5625rem auto;
+    transition: all .3s ease-in-out;
+    border-radius: 55px;
+    transform: translate(28%,0);
+}

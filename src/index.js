@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { AppContext } from './AppContext';
+import app_data from "./Config";
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const data = app_data[0];
+
 root.render(
   <React.StrictMode>
+    <AppContext.Provider value={data}>
     <App />
+    </AppContext.Provider>
   </React.StrictMode>
 );
 

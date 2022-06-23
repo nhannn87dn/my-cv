@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles_section from "../../assets/css/section.module.css";
 import styles from "./styles.module.css";
 
@@ -9,8 +10,10 @@ function Intereststem({content=''}){
 }
 
 
-export default function Interests({interests=[]}) {
-  const listItems = interests.map((row) => 
+function Interests() {
+  const data = useContext(AppContext);
+  console.log(data);
+  const listItems = data.interests.map((row) => 
         <Intereststem key={row.id.toString()} content={row.content} />);
   return (
     <section className={styles.section__interests}>
@@ -23,3 +26,4 @@ export default function Interests({interests=[]}) {
     </section>
   )
 }
+export default React.memo(Interests)

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
+
 import styles_section from "../../assets/css/section.module.css";
 import styles from "./styles.module.css";
 
@@ -9,8 +11,9 @@ function AboutmeItem({content=''}){
 }
 
 
-export default function Aboutme({aboutmes=[]}) {
-  const listDesc= aboutmes.map((row) => 
+export default function Aboutme() {
+  const data = useContext(AppContext);
+  const listDesc= data.aboutme.map((row) => 
     <AboutmeItem key={row.id.toString()} content={row.content}/>);
 
   return (

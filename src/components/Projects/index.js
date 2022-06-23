@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AppContext} from '../../AppContext'
 import styles_section from "../../assets/css/section.module.css";
 import styles from "./styles.module.css";
 
@@ -15,12 +16,12 @@ function ProjecOthertitem({name='', link=''}){
   )
 }
 
-export default function Projects({projects=[], project_others=[]}) {
-
-  const listProject= projects.map((row) => 
+function Projects() {
+  const data = useContext(AppContext);
+  const listProject= data.project.map((row) => 
         <Projectitem key={row.id.toString()}  name={row.name} link={row.link} />);
   
-  const listProjectOther= project_others.map((row) => 
+  const listProjectOther= data.project_other.map((row) => 
         <ProjecOthertitem key={row.id.toString()}  name={row.name} link={row.link} />);
 
   return (
@@ -43,3 +44,4 @@ export default function Projects({projects=[], project_others=[]}) {
     </section>
   )
 }
+export default React.memo(Projects)
