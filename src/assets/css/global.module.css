@@ -94,7 +94,10 @@ ul,ol {
         margin-bottom: 20px;
     }
     .sidebar{
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
         padding-top: 20px;
     }
     .avatar {

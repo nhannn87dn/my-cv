@@ -8,3 +8,11 @@
     border-radius: 55px;
     transform: translate(28%,0);
 }
+
+
+@media (max-width: 800px){
+    .avatar {
+        margin: 0 auto  1.5625rem auto;
+        transform: translate(0,0);
+    }
+}
